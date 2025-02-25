@@ -1,1 +1,1 @@
-web: gunicorn illana-blog-profile.wsgi
+web: gunicorn my_project.wsgi
