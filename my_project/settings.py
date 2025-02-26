@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'https://git.heroku.com/illana-blog-profile.git']
 
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1', 'https://git.heroku.com/illana-b
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,6 +77,27 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
+
+JAZZMIN_SETTINGS = {
+    "site_title": "My Custom Admin",
+    "site_header": "My Admin Panel",
+    "welcome_sign": "Welcome to My Admin Dashboard",
+    "copyright": "My Company © 2025",
+    "search_model": "auth.User",  # Enables search in the User model
+}
+# Jazzmin UI Tweaks - Custom Color Scheme
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly",  # Dark modern theme
+    "navbar": "navbar-dark bg-dark",  # Dark navbar
+    "sidebar": "sidebar-dark-warning",  # Burnt orange sidebar
+    "brand_colour": "navbar-dark",  # Dark branding
+    "accent": "accent-warning",  # Burnt orange accents
+    "body_small_text": False,  # Normal text size
+    "footer_fixed": False,  # Footer not fixed
+    "sidebar_fixed": True,  # Sidebar stays fixed
+    "actions_sticky_top": False,  # Sticky action buttons off
+}
+
 
 
 # Database
